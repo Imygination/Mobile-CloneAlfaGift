@@ -1,0 +1,18 @@
+[
+  {
+    "username": "john doe",
+    "email": "john.doe@example.com",
+    "password": "passw",
+    "role": "Admin",
+    "phoneNumber": "+1234567890",
+    "address": "123 Main Street"
+  },
+  {
+    "username": "alice smith",
+    "email": "alice.smith@example.com",
+    "password": "securepwd",
+    "role": "Admin",
+    "phoneNumber": "+9876543210",
+    "address": "456 Oak Avenue"
+  }
+]

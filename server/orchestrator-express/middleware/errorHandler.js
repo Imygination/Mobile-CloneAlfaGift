@@ -35,7 +35,7 @@ async function errHandler(error, req, res, next) {
 
     default:
       console.log(error);
-      res.status(500).json({ message: "Internal Server Error", error });
+      res.status(500).json({ message: "Internal Server Error"});
       break;
   }
 }

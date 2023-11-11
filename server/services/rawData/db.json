@@ -1,0 +1,45 @@
+{
+  "item": [
+    {
+      "id": 1,
+      "name": "Oreo",
+      "description": "OREO Soft Cake Bolu Vanilla merupakan makanan ringan berupa kue bolu coklat dengan isian di dalamnya. Dibuat menggunakan bahan bahan pilihan berkualitas dan resep rahasia yang telah melegenda, membuat kue bolu ini memiliki rasa yang lezat. Bolu cokelat isi dengan isian krim vanilla di antaranya, memberikan perpaduan rasa manis yang nikmat ditambah dengan baluran coklat di luarnya semakin meningkatkan rasa nikmat. Memiliki tekstur bolu yang lembut dan empuk, serta isian krim yang creamy menghasilkan perpaduan tekstur nikmat. Dicetak dalam bentuk balok yang pas dalam satu konsumsi. Akan lebih nikmat jika dikonsumsi bersama dengan susu sebagai topping celupan untuk bolu. Susu yang meresap kedalam pori porti kue bolu semakin menambah citra rasa nikmat dari biskuit. ",
+      "price": 9700,
+      "imgUrl": "https://c.alfagift.id/product/1/1_A7941830002167_20230502110214261_base.jpg",
+      "authorId": 1,
+      "categoryId": 1
+    },
+    {
+      "id": 2,
+      "name": "Wall's Ice Cream Feast Chocolate 65 ml",
+      "description": "Lezatnya es krim rasa coklat yang creamy dibalut coklat renyah dan kacang panggang bisa bikin semangat lagi rame lagi!  Tersedia juga pilihan lain seperti Feast Vanilla, Feast Double Chocolate, Feast Pop yang siap untuk bikin hari-harimu jadi semangat lagi!",
+      "price": 6000,
+      "imgUrl": "https://c.alfagift.id/product/1/1_A10980005342_20230616160818734_base.jpg",
+      "authorId": 1,
+      "categoryId": 2
+    },
+    {
+      "id": 3,
+      "name": "Fanta Orange Vitamin C Minuman Soda Rasa Jeruk Botol 1,5 L",
+      "description": "Fanta Minuman Soda Orange 1,5 L adalah salah satu minuman soda yang telah menjadi kesukaan banyak orang di seluruh dunia. Fanta orange mampu menyajikan sensasi menyegarkan dari soda yang berpadu dengan rasa buah yang manis, sehingga bisa membuat siapa saja yang meminumnya kembali bersemangat menjalani setiap hari yang dijalani. Hadir dengan varian rasa jeruk yang akan menjadikan setiap hal dalam harimu menjadi jauh lebih menyenangkan. Nikmati kesegarannya yang maksimal dengan meminumnya ketika dingin. Hadir dalam kemasan botol besar isi 1500 ml yang pas di kantong untuk nemenin kamu seharian. Hadirkan sensasi menyegarkan di setiap aktivitas harian mu bersama dengan Fanta Orange 1,5 L.",
+      "price": 11300,
+      "imgUrl": "https://c.alfagift.id/product/1/A12700990360_A12700990360_20200127163357654_base.jpg",
+      "authorId": 1,
+      "categoryId": 3
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "Cookie"
+    },
+    {
+      "id": 2,
+      "name": "Ice Cream"
+    },
+    {
+      "id": 3,
+      "name": "Soda"
+    }
+  ]
+}

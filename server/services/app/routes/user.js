@@ -5,6 +5,7 @@ const ConCategory = require("../controllers/category");
 
 router.post("/item", ConItem.createItem);
 router.get("/item", ConItem.showItem);
+router.get("/item/:id", ConItem.showItemId);
 router.put("/item/:id", ConItem.updateItem);
 router.delete("/item/:id", ConItem.deleteItem);
 

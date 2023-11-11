@@ -27,13 +27,7 @@ module.exports = {
       },
       authorId: {
         allowNull: false,
-        type: Sequelize.INTEGER,
-        references: {
-          model: "Users",
-          key: "id",
-        },
-        onDelete: "cascade",
-        onUpdate: "cascade",
+        type: Sequelize.STRING,
       },
       categoryId: {
         allowNull: false,

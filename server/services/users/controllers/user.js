@@ -32,7 +32,11 @@ class ConUser {
   static async findAllUser(req, res, next) {
     try {
       const newUser = await ConUser.getCollection().find().toArray();
-      res.status(201).json(newUser);
+      const users = newUser.map((user) => {
+        delete user.password;
+        return user;
+      });
+      res.status(200).json(users);
     } catch (error) {
       next(error);
     }
@@ -41,12 +45,14 @@ class ConUser {
   static async findUser(req, res, next) {
     try {
       const { id } = req.params;
-      const user = await ConUser.getCollection().findOne({
+      let user = await ConUser.getCollection().findOne({
         _id: new ObjectId(id),
       });
       if (!user) {
         throw { name: "User Not Found" };
       }
+      delete user.password;
+      console.log(user);
       res.status(200).json(user);
     } catch (error) {
       next(error);

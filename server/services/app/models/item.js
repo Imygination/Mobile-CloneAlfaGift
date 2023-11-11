@@ -68,7 +68,6 @@ module.exports = (sequelize, DataTypes) => {
       },
       authorId: {
         type: DataTypes.STRING,
-        allowNull: false,
       },
       categoryId: {
         type: DataTypes.STRING,

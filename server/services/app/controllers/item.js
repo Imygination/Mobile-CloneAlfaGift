@@ -25,6 +25,29 @@ class ConItem {
     }
   }
 
+  static async showItemId(req, res, next) {
+    try {
+      console.log('masuk');
+      const { id } = req.params;
+      const item = await Item.findByPk(id, {
+        include: [
+          {
+            model: Category,
+          },
+          {
+            model: Ingredient,
+          },
+        ],
+      });
+      if (!item) {
+        throw { name: "Item Not Found" };
+      }
+      res.status(200).json(item);
+    } catch (error) {
+      next(error);
+    }
+  }
+
   static async createItem(req, res, next) {
     const trasnCreateItem = await sequelize.transaction();
     const trasnCreateIngredient = await sequelize.transaction();

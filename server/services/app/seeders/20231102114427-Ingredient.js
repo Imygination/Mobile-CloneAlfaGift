@@ -1,5 +1,5 @@
 "use strict";
-const ingredients = require("../../rawData/dataIngredient.json");
+const ingredients = require("../rawData/dataIngredient.json");
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {

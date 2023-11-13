@@ -158,6 +158,7 @@ export const resolversItem = {
       try {
         const { id } = args;
         const { data } = await axios.delete(`${BASE_URL_APP}/user/item/${id}`);
+        await redis.del("items:all");
         await redis.del(`items:${id}`);
         return data;
       } catch (error) {
@@ -192,6 +193,7 @@ export const resolversItem = {
           ingredientName3,
         });
         await redis.del(`items:${id}`);
+        await redis.del("items:all");
         return newUser;
       } catch (error) {
         throw error;

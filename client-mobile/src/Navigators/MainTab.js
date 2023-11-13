@@ -53,11 +53,6 @@ export default function MainTab() {
         options={optionTab("Akun", "account")}
         component={AccountScreen}
       />
-      <Tab.Screen
-        name="SpecialPager"
-        options={optionTab("Akun", "account")}
-        component={SpecialPager}
-      />
     </Tab.Navigator>
   );
 }

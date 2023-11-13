@@ -1,14 +1,49 @@
-import { Image, ScrollView, StyleSheet, View } from "react-native";
+import {
+  ActivityIndicator,
+  Image,
+  ScrollView,
+  StyleSheet,
+  View,
+} from "react-native";
 import { Text, Button, Searchbar, Card, Avatar } from "react-native-paper";
 import MyComponent from "../Components/MainHeader";
 import MainCard from "../Components/MainCard";
 import { LinearGradient } from "expo-linear-gradient";
 import styles from "../utilitis/Styles";
 import MainPager from "../Components/MainPager";
-
-const LeftContent = (props) => <Avatar.Icon {...props} icon="folder" />;
+import { useQuery, gql } from "@apollo/client";
+const GET_ITEMS = gql`
+  query ExampleQuery {
+    showItems {
+      id
+      name
+      description
+      price
+      imgUrl
+      authorId
+      categoryId
+      createdAt
+      updatedAt
+      Category {
+        updatedAt
+        name
+        id
+        createdAt
+      }
+      Ingredients {
+        updatedAt
+        name
+        itemId
+        id
+        createdAt
+      }
+    }
+  }
+`;
 
 export default function HomeScreen({ navigation }) {
+  const { loading, error, data } = useQuery(GET_ITEMS);
+  // console.log(loading, error, data);
   return (
     <ScrollView style={[styles.container]}>
       <View style={{ flex: 1, backgroundColor: "red" }}>
@@ -33,7 +68,6 @@ export default function HomeScreen({ navigation }) {
           <Searchbar placeholder="Mau belanja apa?" style={{ marginTop: 10 }} />
           <View style={[styles.status, styles.shadow]}>
             <View>
-              <Text>Point</Text>
             </View>
           </View>
           <View style={[styles.middle]}>
@@ -89,14 +123,13 @@ export default function HomeScreen({ navigation }) {
               marginTop: 10,
             }}
           >
-            <MainCard />
-            <MainCard />
-            <MainCard />
-            <MainCard />
-            <MainCard />
-            <MainCard />
-            <MainCard />
-            <MainCard />
+            {loading ? (
+              <ActivityIndicator size="large" />
+            ) : (
+              data.showItems.map((item) => {
+                return <MainCard item={item} key={item.id} />;
+              })
+            )}
           </View>
         </View>
       </View>

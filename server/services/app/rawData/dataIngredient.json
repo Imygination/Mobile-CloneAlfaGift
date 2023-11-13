@@ -13,5 +13,15 @@
     "id": 3,
     "itemId": 3,
     "name": "Gula"
+  },
+  {
+    "id": 4,
+    "itemId": 3,
+    "name": "sirup"
+  },
+  {
+    "id": 5,
+    "itemId": 4,
+    "name": "Ikan"
   }
 ]

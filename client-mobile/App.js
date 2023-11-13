@@ -1,14 +1,16 @@
 import { StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import MainTab from "./src/Navigators/MainTab";
-const Stack = createNativeStackNavigator();
+import { ApolloProvider } from "@apollo/client";
+import client from "./config/apolloClient.js";
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <MainTab />
-    </NavigationContainer>
+    <ApolloProvider client={client}>
+      <NavigationContainer>
+        <MainTab />
+      </NavigationContainer>
+    </ApolloProvider>
   );
 }
 

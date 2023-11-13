@@ -3,7 +3,7 @@ import { Button, Text } from "react-native-paper";
 import styles from "../utilitis/Styles";
 import { useNavigation } from "@react-navigation/native";
 
-export default function MainCard() {
+export default function MainCard({item}) {
   const navigation = useNavigation()
   const { width, height } = Dimensions.get("window");
   return (
@@ -24,18 +24,18 @@ export default function MainCard() {
         <TouchableHighlight
           activeOpacity={0.7}
           underlayColor="white"
-          onPress={() => navigation.navigate("DetailScreen")}
+          onPress={() => navigation.navigate("DetailScreen", {id: item.id})}
           style={{ flex: 1 }}
         >
           <Image
             source={{
-              uri: "https://c.alfagift.id/product/1/1_A13170001039_20231101095330548_small.jpg",
+              uri: item.imgUrl,
             }}
             style={{ flex: 1, resizeMode: "contain" }}
           />
         </TouchableHighlight>
-        <View style={{ flex: 1 }}>
-          <Text>nabati Wafer Goguma 122 g</Text>
+        <View style={{ flex: 1, justifyContent:"flex-end" }}>
+          <Text>{item.name}</Text>
           <Text variant="titleMedium">Rp 8.900</Text>
           <Button mode="contained" buttonColor="darkblue" >
             <Text style={{ color: "white", fontSize: 10 }}>+ Keranjang</Text>

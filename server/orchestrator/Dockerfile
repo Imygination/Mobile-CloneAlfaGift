@@ -2,8 +2,7 @@ FROM node:latest
 
 WORKDIR /usr/local/app
 
-ENV NODE_ENV=production \
-    REDIS_PASS=ZCBm5QWr5FlqssdFkgcE5BnKvpNJ90eF \
+ENV REDIS_PASS=ZCBm5QWr5FlqssdFkgcE5BnKvpNJ90eF \
     PORT=4000
 
 COPY package.json package-lock.json /usr/local/app/

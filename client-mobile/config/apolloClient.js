@@ -1,6 +1,6 @@
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 
 export default client = new ApolloClient({
-  uri: "https://aac1-114-122-100-10.ngrok-free.app/",
+  uri: "https://alfakw2.gemaramadhan.online/",
   cache: new InMemoryCache(),
 });

@@ -1,5 +1,5 @@
-const { MongoClient } = require("mongodb");
-const uri = "mongodb://127.0.0.1:27017";
+const { MongoClient, ServerApiVersion } = require("mongodb");
+const uri = `mongodb://gemaramadhan20:${process.env.MONGO_PASS}@ac-3vkg2mn-shard-00-00.zjteeqn.mongodb.net:27017/?ssl=true&replicaSet=atlas-93jrv1-shard-0&authSource=admin&retryWrites=true&w=majority`;
 const client = new MongoClient(uri);
 
 let db = null;

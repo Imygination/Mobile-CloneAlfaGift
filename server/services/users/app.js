@@ -1,6 +1,5 @@
-if (process.env.NODE_ENV !== "production") {
-  require("dotenv").config();
-}
+require("dotenv").config();
+
 
 const cors = require("cors");
 const express = require("express");
@@ -8,7 +7,7 @@ const { mongoInit, getDB } = require("./config/mongo");
 const app = express();
 const router = require("./routes");
 const errHandler = require("./middleware/errorHandler");
-const port = process.env.PORT || 4001;
+const port = Number(process.env.PORT) || 4001;
 
 app.use(cors());
 app.use(express.json());

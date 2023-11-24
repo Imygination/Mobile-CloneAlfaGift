@@ -106,6 +106,7 @@ export const resolversUser = {
         const { id } = args;
         const { data } = await axios.delete(`${BASE_URL_USER}/user/${id}`);
         await redis.del(`users:${id}`);
+        await redis.del("users:all");
         console.log(data);
         return { message: `Succed Delete User` }
       } catch (error) {

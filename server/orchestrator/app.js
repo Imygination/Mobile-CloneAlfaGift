@@ -1,6 +1,4 @@
-import "dotenv/config";
-if (process.env.NODE_ENV !== "production") {
-}
+import 'dotenv/config'
 
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
@@ -14,7 +12,7 @@ const server = new ApolloServer({
 });
 
 const { url } = await startStandaloneServer(server, {
-  listen: { port: 4000 },
+  listen: { port: Number(process.env.PORT) || 4000 },
 });
 
 console.log(`🚀  Server ready at: ${url}`);

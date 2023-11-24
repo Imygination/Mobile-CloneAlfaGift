@@ -1,0 +1,26 @@
+services:
+    orchestrator:
+        image: orchestrator
+        build: ./orchestrator
+        ports:
+            - "80:4000"
+        environment:
+            - PORT=4000
+            - REDIS_PASS=2IyvtyfiO1OTb1VP74lomUSKXyI0qiJc
+    user-service:
+        image: user-service
+        build: ./services/users
+        ports:
+            - "4001:4001"
+        environment:
+            - jwtSecret = qwertyuiop
+            - MONGO_PASS = ksamXrZXK2FAFyAo
+    app-service:
+        image: app-service
+        build: ./services/app
+        ports:
+            - "4002:4002"
+        environment:
+            - NODE_ENV=production
+            - PORT=4002
+            - DATABASE_URL=postgresql://postgres:vGM6FXXeX1Jikait@db.copsgaxiwejotmgxwfww.supabase.co:5432/postgres

@@ -1,5 +1,5 @@
 "use strict";
-const items = require("../../rawData/dataItem.json");
+const items = require("../rawData/dataItem.json");
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {

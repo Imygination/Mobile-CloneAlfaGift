@@ -33,9 +33,13 @@ class ConItem {
         res.status(200).json(data);
       } else {
         console.log("Fetching...");
-        const { data:item } = await axios.get(`${BASE_URL_APP}/user/item/${id}`);
-        const { data:author } = await axios(`${BASE_URL_USER}/user/${item.authorId}`);
-        item.User = author
+        const { data: item } = await axios.get(
+          `${BASE_URL_APP}/user/item/${id}`
+        );
+        const { data: author } = await axios(
+          `${BASE_URL_USER}/user/${item.authorId}`
+        );
+        item.User = author;
         await redis.set(`items:${id}`, JSON.stringify(item));
         console.log("Complete Fetching");
         res.status(200).json(item);
@@ -53,8 +57,17 @@ class ConItem {
 
   static async createItem(req, res, next) {
     try {
-      const { name, description, price, imgUrl, authorId, categoryId } =
-        req.body;
+      const {
+        name,
+        description,
+        price,
+        imgUrl,
+        authorId,
+        categoryId,
+        ingredientName1,
+        ingredientName2,
+        ingredientName3,
+      } = req.body;
       // console.log(username, email, password, role, phoneNumber, address);
       const newUser = await axios.post(`${BASE_URL_APP}/user/item`, {
         name,
@@ -63,6 +76,9 @@ class ConItem {
         imgUrl,
         authorId,
         categoryId,
+        ingredientName1,
+        ingredientName2,
+        ingredientName3,
       });
       await redis.del("items:all");
       res.status(200).json({
